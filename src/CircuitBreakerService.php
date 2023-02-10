@@ -5,10 +5,13 @@ namespace LaravelCircuitBreaker;
 use Illuminate\Config\Repository;
 use LaravelCircuitBreaker\Config\Config;
 use LaravelCircuitBreaker\Drivers\Contracts\AbstractDriver;
+use LaravelCircuitBreaker\Factories\CacheDriverFactory;
 use LaravelCircuitBreaker\Factories\Contracts\AbstractDriverFactory;
 
 class CircuitBreakerService
 {
+    public const DEFAULT_FACTORY = CacheDriverFactory::class;
+
     /** @var array */
     private array $circuitBreakers;
     
@@ -25,7 +28,8 @@ class CircuitBreakerService
         $this->driverFactoryClass = $configRepository->get(
             Config::buildFullConfigKey(
                 Config::DRIVER_FACTORY
-            )
+            ),
+            self::DEFAULT_FACTORY
         );
     }
 
