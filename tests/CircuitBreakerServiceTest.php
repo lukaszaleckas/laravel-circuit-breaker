@@ -6,9 +6,9 @@ use LaravelCircuitBreaker\CircuitBreakerService;
 use LaravelCircuitBreaker\Config\Config;
 use LaravelCircuitBreaker\Config\ServiceConfig;
 use LaravelCircuitBreaker\Drivers\Contracts\AbstractDriver;
-use LaravelCircuitBreaker\Tests\Contracts\AbstractTest;
+use LaravelCircuitBreaker\Tests\Contracts\BaseTestCase;
 
-class CircuitBreakerServiceTest extends AbstractTest
+class CircuitBreakerServiceTest extends BaseTestCase
 {
     /** @var CircuitBreakerService */
     private CircuitBreakerService $circuitBreakerService;

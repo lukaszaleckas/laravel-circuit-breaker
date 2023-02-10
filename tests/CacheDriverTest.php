@@ -7,9 +7,9 @@ use Illuminate\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Support\Facades\Cache;
 use LaravelCircuitBreaker\Drivers\CacheDriver;
-use LaravelCircuitBreaker\Tests\Contracts\AbstractTest;
+use LaravelCircuitBreaker\Tests\Contracts\BaseTestCase;
 
-class CacheDriverTest extends AbstractTest
+class CacheDriverTest extends BaseTestCase
 {
     /** @var CacheDriver */
     private CacheDriver $cacheDriver;

@@ -9,7 +9,7 @@ use LaravelCircuitBreaker\Factories\CacheDriverFactory;
 use LaravelCircuitBreaker\Tests\Traits\FakerTrait;
 use Orchestra\Testbench\TestCase;
 
-abstract class AbstractTest extends TestCase
+abstract class BaseTestCase extends TestCase
 {
     use FakerTrait;
 
@@ -95,6 +95,10 @@ abstract class AbstractTest extends TestCase
         $app['config']->set(
             Config::buildFullConfigKey(Config::HALF_OPEN_TIME_WINDOW),
             $this->defaultHalfOpenTimeWindow
+        );
+        $app['config']->set(
+            Config::buildFullConfigKey(Config::SERVICES),
+            []
         );
     }
 }

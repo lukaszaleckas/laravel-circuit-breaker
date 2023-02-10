@@ -8,3 +8,8 @@ parameters:
     - tests
   level: 6
   checkMissingIterableValueType: false
+  ignoreErrors:
+  -
+    message: "#Parameter \\#[0-9]+ \\$.+ of class .+ constructor expects .+, Mockery\\\\MockInterface given.#"
+    paths:
+      - tests/*
